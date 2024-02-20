@@ -1,0 +1,27 @@
+<form class="form">
+   <h1>Técnico | Incluir</h1> <br>
+    <mat-form-field class="full-width">
+      <mat-label>Nome:</mat-label>
+      <input [(ngModel)]="tecnico.nome" [formControl]="nome" required name ="nome" name="nome" maxlength="100" matInput placeholder="Ex. Alan Turing" >
+      <mat-error *ngIf="nome.invalid" >{{errorValidName()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>CPF:</mat-label>
+        <input [(ngModel)]="tecnico.cpf" [formControl]="cpf" required name ="cpf" name="cpf" maxlength="15"  matInput placeholder="000.000.000-00" >
+        <mat-error *ngIf="cpf.invalid" >{{errorValidCpf()}}</mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field class="full-width">
+        <mat-label>Telefone:</mat-label>
+        <input [(ngModel)]="tecnico.telefone"  [formControl]="telefone" required name ="telefone" name="telefone" name="telefone" matInput placeholder="Ex. (00) 9000-0000" >
+        <mat-error *ngIf="telefone.invalid" >{{errorValidTelefone()}}</mat-error>
+      </mat-form-field>
+  
+      
+      <button class="mat-flat-button" (click)="create()" [disabled]="errorValidName() || errorValidCpf() || errorValidTelefone() " mat-flat-button color="primary">Salvar</button>    
+      <button class="mat-flat-button" (click)="cancel()" mat-flat-button color="primary">Sair</button>
+
+  </form>
+  

@@ -1,0 +1,14 @@
+<form class="form">
+  <h1>Categoria | Incluir</h1> <br>
+  
+  <mat-form-field class="full-width">
+    <mat-label>Descrição:</mat-label>
+    <input [(ngModel)]="categoria.descricao" [formControl]="descricao" required name ="nome" name="descricao" maxlength="100" matInput placeholder="Digite o nome do cliente..." >
+    <mat-error *ngIf="descricao.invalid" >{{errorValidDescricao()}}</mat-error>
+  </mat-form-field>
+
+  <button class="mat-flat-button" (click)="create()" [disabled]="errorValidDescricao()" mat-flat-button
+    color="primary">Salvar</button>
+  <button class="mat-flat-button" (click)="cancel()" mat-flat-button color="primary">Sair</button>
+
+</form>

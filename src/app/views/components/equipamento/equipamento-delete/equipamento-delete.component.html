@@ -1,0 +1,23 @@
+<form class="form">
+    <h1>Equipamento | Excluir</h1> <br>
+    <mat-form-field class="full-width">
+      <mat-label>Nome:</mat-label>
+      <input disabled [(ngModel)]="equipamento.nome"  name="nome" maxlength="100" matInput placeholder="Digite o nome ..." >      
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>Série:</mat-label>
+        <input disabled [(ngModel)]="equipamento.serie"  name="serie" maxlength="100" matInput placeholder="Digite a série..." >      
+     </mat-form-field>
+    
+    <mat-form-field class="full-width">
+        <mat-label>Marca:</mat-label>
+        <input disabled [(ngModel)]="equipamento.marca"  name="marca" maxlength="100" matInput placeholder="Digite a marca..." >      
+     </mat-form-field>
+    
+  
+    <button class="mat-flat-button"  (click)="delete()"  mat-flat-button
+      color="primary">Excluir</button>
+    <button class="mat-flat-button" (click)="cancel()" mat-flat-button color="primary">Sair</button>
+  
+  </form>

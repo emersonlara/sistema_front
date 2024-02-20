@@ -1,0 +1,26 @@
+<form class="form">
+    <h1>Equipamento | Incluir</h1> <br>
+    
+    <mat-form-field class="full-width">
+      <mat-label>Nome:</mat-label>
+       <input [(ngModel)]="equipamento.nome" [formControl]="nome" required  name="nome" maxlength="100" matInput placeholder="Digite o nome..." >
+       <mat-error *ngIf="nome.invalid" >{{errorValidNome()}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+      <mat-label>Série:</mat-label>
+       <input [(ngModel)]="equipamento.serie" [formControl]="serie" required  name="serie" maxlength="100" matInput placeholder="Digite a série..." >
+       <mat-error *ngIf="serie.invalid" >{{errorValidSerie()}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+      <mat-label>Marca:</mat-label>
+       <input [(ngModel)]="equipamento.marca" [formControl]="marca" required  name="marca" maxlength="100" matInput placeholder="Digite a marca.." >
+       <mat-error *ngIf="marca.invalid" >{{errorValidMarca()}}</mat-error>
+      </mat-form-field>
+
+    <button class="mat-flat-button" (click)="create()" [disabled]="errorValidNome()" mat-flat-button
+      color="primary">Salvar</button>
+    <button class="mat-flat-button" (click)="cancel()" mat-flat-button color="primary">Sair</button>
+  
+  </form>

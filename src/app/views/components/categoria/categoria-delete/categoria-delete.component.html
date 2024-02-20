@@ -1,0 +1,12 @@
+<form class="form">
+    <h1>Categoria | Excluir</h1> <br>
+    <mat-form-field class="full-width">
+      <mat-label>Descrição:</mat-label>
+      <input disabled [(ngModel)]="categoria.descricao"  name="descricao" maxlength="100" matInput placeholder="Digite o nome do cliente..." >      
+    </mat-form-field>
+  
+    <button class="mat-flat-button"  (click)="delete()"  mat-flat-button
+      color="primary">Excluir</button>
+    <button class="mat-flat-button" (click)="cancel()" mat-flat-button color="primary">Sair</button>
+  
+  </form>

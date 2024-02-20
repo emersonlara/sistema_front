@@ -1,0 +1,72 @@
+<div class="container">
+    <h1> Ordem de serviço | Incluir</h1>
+    <div class="labels">
+        <mat-form-field>
+            <mat-label>Selecione um técnico</mat-label>
+            <mat-select [(value)]="os.tecnico">                
+                <mat-option *ngFor="let tec of tecnicos" value="{{tec.id}}">{{tec.nome}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Selecione um cliente</mat-label>
+            <mat-select [(value)]="os.cliente">                
+                <mat-option *ngFor="let cli of clientes" value="{{cli.id}}">{{cli.nome}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Selecione um Status</mat-label>
+            <mat-select [(value)]="os.status">                
+                <mat-option value="0">ABERTO</mat-option>
+                <mat-option value="1">EM ANDAMENTO</mat-option>
+                <mat-option value="2">ENCERRADO</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Prioridade</mat-label>
+            <mat-select [(value)]="os.prioridade">                
+                <mat-option value="0">BAIXA</mat-option>
+                <mat-option value="1">MEDIA</mat-option>
+                <mat-option value="2">ALTA</mat-option>
+            </mat-select>
+        </mat-form-field>
+       
+    </div>
+</div>
+
+<div class="container">
+    <div class="labels">    
+        <mat-form-field>
+            <mat-label>Forma Pagamento</mat-label>
+            <mat-select [(value)]="os.formapagamento">                
+                <mat-option value="0">A VISTA</mat-option>
+                <mat-option value="1">CARTEIRA</mat-option>
+                <mat-option value="2">CARTÃO DE DÉBITO</mat-option>
+                <mat-option value="3">CARTÃO DE CRÉDITO</mat-option>
+                <mat-option value="4">BOLETO</mat-option>
+                <mat-option value="5">PIX</mat-option>
+                <mat-option value="6">CORTESIA</mat-option>
+                <mat-option value="7">GARANTIA</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <form class="form">
+        <mat-form-field class="full-width">
+          <mat-label>Observações da Ordem de Serviço</mat-label>
+          <textarea [(ngModel)]="os.observacoes" name="observacoes" matInput maxlength="255" ></textarea>
+        </mat-form-field>
+      </form>
+
+      <form class="form">
+        <mat-form-field class="full-width">
+          <mat-label>Valor Serviço</mat-label>
+          <input  [(ngModel)]="os.valorservico" name="valorservico" matInput placeholder="Valor monetário">
+        </mat-form-field>
+      </form>
+
+      <button (click)="create()" class="mat-elevation-z8" mat-flat-button color="primary">Salvar</button>
+      <button (click)="cancel()"  class="mat-elevation-z8" mat-flat-button color="primary">Cancelar</button>
+</div>
